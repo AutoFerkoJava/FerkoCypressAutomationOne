@@ -14,6 +14,7 @@
 
 //Customized commands by ourself
 //Test12-Customized
+
 Cypress.Commands.add("selectProduct", (productName) => { 
 cy.get('h4.card-title').each(($el, index, $list) => {
     if($el.text().includes(productName))

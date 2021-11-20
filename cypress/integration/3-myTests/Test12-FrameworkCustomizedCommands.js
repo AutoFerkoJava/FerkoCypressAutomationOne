@@ -1,42 +1,47 @@
 //47.Building Customized Cypress commands for reusing the code
 //48. Parameterizing the test Data from Json files using each command
+
+/// <reference types="Cypress" />
+
+import HomePage from '../pageObjects/HomePage'
+import ProductPage from '../pageObjects/ProductPage'
 describe("My Tenth Test Suite", function () {
   //Runs once before all tests in the block
+  
   before(function () {
     //data has access to json file
-    cy.fixture("example").then(function (data) {
+    cy.fixture('example').then(function (data) {
       //takes data from json file
       this.data = data;
     });
   });
 
-  it("My Tenth Test Case", function () {
-    cy.visit("https://rahulshettyacademy.com/angularpractice/");
+  it('My Tenth Test Case', function () {
+    const homePage=new HomePage()
+    const productPage=new ProductPage()
 
-    cy.get('input[name="name"]:nth-child(2)').type(this.data.name);
-    cy.get('select').select(this.data.gender);
+    cy.visit('https://rahulshettyacademy.com/angularpractice/');
+
+    homePage.getEditBox().type(this.data.name);
+    homePage.getGender().select(this.data.gender);
     //Validating Assertions
-    cy.get(':nth-child(4) > .ng-untouched').should(
-      "have.value",
-      this.data.name
-    );
+    homePage.getTwoWayDataBinding().should('have.value',this.data.name);
     //Verify Property is 2 or not
-    cy.get('input[name="name"]:nth-child(2)').should(
-      "have.attr",
-      "minlength",
-      "2"
-    );
-    //is disabled or Not "Entrepreneur (disabled)"
-    cy.get('#inlineRadio3').should('be.disabled');
-    cy.pause()
+    homePage.getEditBox().should('have.attr','minlength','2');
+
+    //is disabled or Not "Entrepreneaur (disabled)"
+    homePage.getEntrepreneaur().should('be.disabled');
+    //cy.pause()
     //Customized commands "Shop --Link"
-    cy.get(':nth-child(2) > .nav-link').click();
+    homePage.getShopTab().click();
     
    
     this.data.productName.forEach(function(element) {
      
          cy.selectProduct(element)
     });
+    //click CheckOutButton
+    productPage.checkOutButton().click()
     
     
   });
