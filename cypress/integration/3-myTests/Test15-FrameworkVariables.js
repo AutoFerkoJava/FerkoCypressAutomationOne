@@ -4,8 +4,8 @@
 /// <reference types="Cypress" />
 
 
-import HomePage from '../pageObjects/HomePage'
-import ProductPage from '../pageObjects/ProductPage'
+import HomePage from '../../support/pageObjects/HomePage'
+import ProductPage from '../../support/pageObjects/ProductPage'
 describe("My Tenth Test Suite", function () {
   //Runs once before all tests in the block
   
