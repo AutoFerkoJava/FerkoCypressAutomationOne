@@ -4,7 +4,8 @@ import 'cypress-iframe'
 describe('My Nineth Test Suite', function(){
     it('My Nineth Test case', function(){
 
-    cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+    //cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
     cy.frameLoaded("#courses-iframe")
 
     //switch to iframe mode using find locator

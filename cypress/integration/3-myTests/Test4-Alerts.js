@@ -3,7 +3,8 @@ describe("My Fourth Test Suite", function () {
 
     it("My FourthTest case", function () {
       //test steps --> Alerts popUp
-      cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+      //cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+      cy.visit(Cypress.env('url')+"/AutomationPractice/");
       cy.get('#alertbtn').click()
       cy.get('[value="Confirm"]').click()
      

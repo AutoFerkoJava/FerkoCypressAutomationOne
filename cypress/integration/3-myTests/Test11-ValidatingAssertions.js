@@ -15,7 +15,7 @@ describe('My Tenth Test Suite', function(){
    
    it ('My Tenth Tes Case',function(){
     
-       cy.visit('https://rahulshettyacademy.com/angularpractice/')
+    cy.visit(Cypress.env('url')+"/angularpractice/");
        cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
        cy.get('select').select(this.data.gender)
        //Validating Assertions

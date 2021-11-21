@@ -2,7 +2,8 @@
 describe("My First Test Suite", function () {
   it("My FirstTest case", function () {
     //test steps
-    cy.visit("https://rahulshettyacademy.com/seleniumPractise#/");
+    cy.visit(Cypress.env('url')+"/seleniumPractise#/");
+    //cy.visit("https://rahulshettyacademy.com/seleniumPractise#/");
     // get is find elements in Cypress
     cy.get(".search-keyword").type('ca');
     cy.wait(2000);

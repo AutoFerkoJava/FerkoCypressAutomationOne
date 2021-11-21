@@ -3,8 +3,8 @@ describe("My Sifth Test Suite", function () {
 
     it("My Sifth Test case", function () {
       //test steps --> Child tab with combination of Cypress & Jquery commands
-      cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
-      
+      //cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+      cy.visit(Cypress.env('url')+"/AutomationPractice/");
       //Handling Tables
       cy.get('tr td:nth-child(2)').each(($e1, index,$list)=>{
         //select the 2d column --> sybling

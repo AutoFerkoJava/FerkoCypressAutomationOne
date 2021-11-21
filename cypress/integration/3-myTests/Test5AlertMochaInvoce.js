@@ -2,8 +2,9 @@ describe("My Fifth Test Suite", function () {
 
     it("My Fifth Test case", function () {
       //test steps --> Child tab with combination of Cypress & Jquery commands
-      cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+      //cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
       //cy.visit("http://qaclickacademy.com/practice.php");
+      cy.visit(Cypress.env('url')+"/AutomationPractice/");
       cy.get('#alertbtn').click()
       cy.get('[value="Confirm"]').click()
      
