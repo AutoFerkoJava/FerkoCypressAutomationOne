@@ -60,6 +60,9 @@ describe("My Tenth Test Suite", function () {
       cy.log(sum)
     })
     
+<<<<<<< HEAD:cypress/integration/3-myTests/Test12-FrameworkCustomizedCommands.js
+    /**All updated */
+=======
 
     cy.contains('Checkout').click()
     cy.get('#country').type('India')
@@ -69,5 +72,6 @@ describe("My Tenth Test Suite", function () {
           
     })
     
+>>>>>>> master:cypress/integration/3-myTests/Test13-FrameworkSum.js
   });
 
