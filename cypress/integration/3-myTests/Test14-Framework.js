@@ -3,6 +3,7 @@
 
 /// <reference types="Cypress" />
 
+
 import HomePage from '../pageObjects/HomePage'
 import ProductPage from '../pageObjects/ProductPage'
 describe("My Tenth Test Suite", function () {
@@ -52,6 +53,7 @@ describe("My Tenth Test Suite", function () {
     //Sum Function
     var sum=0
     cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
+      
       const amount=$el.text()
       var res= amount.split(" ")
       res= res[1].trim()
@@ -60,6 +62,15 @@ describe("My Tenth Test Suite", function () {
     }).then(function()
     {
       cy.log(sum)
+
+    })
+
+    cy.get('h3 strong').then(function(element)
+    {
+      const amount=element.text()
+      var res= amount.split(" ")
+      var total= res[1].trim()
+      expect(Number(total)).to.equal(sum)
     })
     
 
