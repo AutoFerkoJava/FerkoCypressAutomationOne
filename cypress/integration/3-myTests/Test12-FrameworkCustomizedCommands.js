@@ -43,6 +43,6 @@ describe("My Tenth Test Suite", function () {
     //click CheckOutButton
     productPage.checkOutButton().click()
     
-    
+    /**All updated */
   });
 });
